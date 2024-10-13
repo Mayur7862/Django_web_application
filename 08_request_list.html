@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Your Service Requests</h2>
+<ul>
+    {% for request in requests %}
+        <li>Request ID: {{ request.id }} - Status: {{ request.status }} - Created: {{ request.created_at }}</li>
+    {% empty %}
+        <li>No requests found.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
